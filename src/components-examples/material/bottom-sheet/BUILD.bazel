@@ -1,0 +1,34 @@
+load("//tools:defaults.bzl", "ng_module")
+
+package(default_visibility = ["//visibility:public"])
+
+ng_module(
+    name = "bottom-sheet",
+    srcs = glob(["**/*.ts"]),
+    assets = glob([
+        "**/*.html",
+        "**/*.css",
+    ]),
+    module_name = "@angular/components-examples/material/bottom-sheet",
+    deps = [
+        "//src/cdk/overlay",
+        "//src/cdk/testing",
+        "//src/cdk/testing/testbed",
+        "//src/material/bottom-sheet",
+        "//src/material/bottom-sheet/testing",
+        "//src/material/button",
+        "//src/material/list",
+        "@npm//@angular/platform-browser",
+        "@npm//@angular/platform-browser-dynamic",
+        "@npm//@types/jasmine",
+    ],
+)
+
+filegroup(
+    name = "source-files",
+    srcs = glob([
+        "**/*.html",
+        "**/*.css",
+        "**/*.ts",
+    ]),
+)

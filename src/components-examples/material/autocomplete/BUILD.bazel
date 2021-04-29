@@ -1,0 +1,36 @@
+load("//tools:defaults.bzl", "ng_module")
+
+package(default_visibility = ["//visibility:public"])
+
+ng_module(
+    name = "autocomplete",
+    srcs = glob(["**/*.ts"]),
+    assets = glob([
+        "**/*.html",
+        "**/*.css",
+    ]),
+    module_name = "@angular/components-examples/material/autocomplete",
+    deps = [
+        "//src/cdk/overlay",
+        "//src/cdk/testing",
+        "//src/cdk/testing/testbed",
+        "//src/material/autocomplete",
+        "//src/material/autocomplete/testing",
+        "//src/material/form-field",
+        "//src/material/input",
+        "//src/material/slide-toggle",
+        "@npm//@angular/forms",
+        "@npm//@angular/platform-browser",
+        "@npm//@angular/platform-browser-dynamic",
+        "@npm//@types/jasmine",
+    ],
+)
+
+filegroup(
+    name = "source-files",
+    srcs = glob([
+        "**/*.html",
+        "**/*.css",
+        "**/*.ts",
+    ]),
+)

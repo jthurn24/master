@@ -1,0 +1,1 @@
+Angular component muscle
